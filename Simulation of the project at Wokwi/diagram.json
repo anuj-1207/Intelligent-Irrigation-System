@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "author": "Anuj Shrivastava",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 60.78, "left": -0.19, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 236.93,
+      "left": -136.15,
+      "attrs": { "temperature": "51.4", "humidity": "4.5" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht2",
+      "top": -3.5,
+      "left": -136.03,
+      "attrs": { "temperature": "65", "humidity": "13" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht3",
+      "top": -33.76,
+      "left": 685.91,
+      "attrs": { "temperature": "58.2", "humidity": "3.5" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -9.61, "left": -352.43, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": 228.42, "left": -357.53, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo3", "top": -18.99, "left": 479.66, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo4", "top": 230.22, "left": 483.32, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 134.85,
+      "left": 600.12,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht4",
+      "top": 236.22,
+      "left": 697.96,
+      "attrs": { "temperature": "50.5", "humidity": "2" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 80.42,
+      "left": -711.41,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "dht1:VCC", "mega:5V", "red", [ "v16.73", "h336.56" ] ],
+    [ "dht4:VCC", "mega:5V", "red", [ "v18.02", "h-378.6" ] ],
+    [ "dht2:VCC", "mega:5V", "red", [ "v20.89", "h85.15", "v284.55", "h239.94" ] ],
+    [ "dht1:GND", "mega:GND.2", "black", [ "v33.65", "h309.33" ] ],
+    [ "dht4:GND", "mega:GND.2", "black", [ "v33.4", "h-408.91" ] ],
+    [ "dht2:GND", "mega:GND.2", "black", [ "v28.59", "h57.92", "v289.16", "h244.56" ] ],
+    [ "servo1:GND", "mega:GND.3", "black", [ "h-20.18", "v496.81", "h476.88" ] ],
+    [ "servo2:GND", "mega:GND.3", "black", [ "h-25.92", "v207.9", "h500.14" ] ],
+    [ "servo4:GND", "mega:GND.3", "black", [ "h-57.84", "v207.16", "h-241.35" ] ],
+    [ "servo3:GND", "mega:GND.3", "black", [ "h-38.58", "v508.64", "h-260.25" ] ],
+    [ "servo1:V+", "mega:5V", "red", [ "h-40.53", "v493.12", "h485.6" ] ],
+    [ "servo2:V+", "mega:5V", "red", [ "h-34.65", "v204.21", "h494.33" ] ],
+    [ "servo4:V+", "mega:5V", "red", [ "h-49.12", "v202.02", "h-268.97" ] ],
+    [ "servo3:V+", "mega:5V", "red", [ "h-44.4", "v503.5", "h-270.43" ] ],
+    [ "servo3:PWM", "mega:9", "green", [ "h-31.55", "v91.22", "h-287.66" ] ],
+    [ "servo4:PWM", "mega:8", "green", [ "h-35.15", "v-202.78", "h-285.88" ] ],
+    [ "lcd1:VCC", "mega:5V", "red", [ "h-33.26", "v293.28", "h938.49" ] ],
+    [ "ldr1:VCC", "mega:5V", "red", [ "h0.18", "v15.32", "h-360.39", "v24.38", "h-122.96" ] ],
+    [ "ldr1:GND", "mega:GND.2", "black", [ "h-408.97", "v46.51", "h-61.48" ] ],
+    [ "servo1:PWM", "mega:10", "green", [ "h0.36", "v100.06", "h506.89" ] ],
+    [ "lcd1:SCL", "mega:21", "green", [ "h10.05", "v295.57", "h1059.95" ] ],
+    [ "lcd1:SDA", "mega:20", "green", [ "h-3", "v333.17", "h1035.86" ] ],
+    [ "lcd1:GND", "mega:GND.3", "black", [ "h-14.04", "v314.03", "h921.44" ] ],
+    [ "servo2:PWM", "mega:11", "green", [ "h0.44", "v-132.95", "h502.88" ] ],
+    [ "dht4:SDA", "mega:4", "green", [ "v25.14", "h-497.29" ] ],
+    [ "dht1:SDA", "mega:6", "green", [ "v10.38", "h313.74" ] ],
+    [ "dht2:SDA", "mega:7", "green", [ "v38.02", "h307.59" ] ],
+    [ "dht3:VCC", "mega:5V", "red", [ "v27.12", "h-266.07", "v162.61", "h-259.97" ] ],
+    [ "dht3:GND", "mega:GND.3", "black", [ "v45.19", "h-316.11", "v163.61", "h-224.84" ] ],
+    [ "dht3:SDA", "mega:5", "green", [ "v33.03", "h-500.68" ] ],
+    [ "ldr1:DO", "mega:2", "green", [ "h0" ] ],
+    [ "ldr1:AO", "mega:A0", "green", [ "h-134.09", "v109.64", "h-261.49" ] ]
+  ]
+}
